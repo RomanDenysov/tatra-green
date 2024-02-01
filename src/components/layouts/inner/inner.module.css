@@ -1,0 +1,15 @@
+.inner {
+	background-color: #202820;
+}
+.page {
+	background-color: white;
+}
+.slide {
+	height: 100svh;
+	width: 100vw;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background-color: #202820;
+	z-index: 1;
+}

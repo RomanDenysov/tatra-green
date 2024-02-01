@@ -1,0 +1,252 @@
+.container {
+	width: 100svw;
+	height: fit-content;
+	z-index: 3;
+}
+.containerfixed {
+	width: 100svw;
+	height: 100svh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 3;
+}
+.headerbox {
+	padding: 30px 50px;
+	z-index: 4;
+	color: var(--text-color);
+	position: absolute;
+	max-width: 1280px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+.btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50px;
+	height: 50px;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.burger {
+	width: 50px;
+	height: 20px;
+	border-top: 4px solid var(--text-color);
+	border-bottom: 4px solid var(--text-color);
+	transition: all 0.3s ease-in-out;
+}
+.burger:hover {
+	border-color: white;
+}
+
+.img {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.active {
+	z-index: 3;
+	position: fixed;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	width: 100svw;
+	height: 100%;
+	background-color: #202820;
+	color: var(--text-secondary);
+	transition: all 0.5s ease-in-out;
+}
+.wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	max-width: 1280px;
+	height: 100%;
+	margin: auto;
+}
+.navbox {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 20px;
+}
+.navitem {
+	font-family: "maregraphe-variable";
+	font-size: 60px;
+	transition: all 0.3s ease-in-out;
+}
+.navitem:hover {
+	color: var(--text-color);
+	transform: translateX(20px);
+}
+.activelink {
+	font-family: "maregraphe-variable";
+	font-size: 60px;
+	transition: all 0.3s ease-in-out;
+	color: var(--text-color);
+	transform: translateX(20px);
+}
+.infobox {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 60px;
+}
+.contacts {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	gap: 10px;
+}
+.title {
+	max-width: 320px;
+	font-size: 40px;
+	font-weight: 500;
+	line-height: 50px;
+	margin-bottom: 20px;
+}
+.contactitem {
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+.icon {
+	width: 20px;
+	height: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.contactitem:hover {
+	color: var(--text-color);
+}
+.imgsmall {
+	display: none;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+@media screen and (max-width: 768px) {
+	.headerbox {
+		padding: 20px;
+		max-width: 780px;
+	}
+	.btn {
+		width: 40px;
+		height: 40px;
+	}
+	.wrapper {
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		gap: 100px;
+		padding: 150px 20px 0 20px;
+	}
+	.navbox {
+		gap: 30px;
+	}
+	.infobox {
+		gap: 40px;
+	}
+	.title {
+		margin-bottom: 0;
+	}
+	.img {
+		display: none;
+	}
+	.imgsmall {
+		display: block;
+	}
+}
+@media screen and (max-width: 480px) {
+	.headerbox {
+		padding: 20px;
+		max-width: 780px;
+	}
+	.btn {
+		width: 40px;
+		height: 40px;
+	}
+	.wrapper {
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		gap: 60px;
+		padding: 150px 20px 0 20px;
+	}
+	.navbox {
+		gap: 20px;
+	}
+	.navitem {
+		font-size: 54px;
+	}
+	.infobox {
+		gap: 20px;
+	}
+	.title {
+		margin-bottom: 0;
+		font-size: 30px;
+	}
+	.img {
+		display: none;
+	}
+	.imgsmall {
+		display: block;
+	}
+}
+@media screen and (max-width: 390px) {
+	.headerbox {
+		padding: 20px;
+		max-width: 780px;
+	}
+	.btn {
+		width: 40px;
+		height: 40px;
+	}
+	.wrapper {
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		gap: 50px;
+		padding: 140px 20px 0 20px;
+	}
+	.navbox {
+		gap: 10px;
+	}
+	.navitem {
+		font-size: 44px;
+	}
+	.activelink {
+		font-family: "maregraphe-variable";
+		font-size: 44px;
+		transition: all 0.3s ease-in-out;
+		color: var(--text-color);
+		transform: translateX(20px);
+	}
+	.infobox {
+		gap: 20px;
+	}
+	.title {
+		margin-bottom: 0;
+		font-size: 24px;
+	}
+	.img {
+		display: none;
+	}
+	.imgsmall {
+		display: block;
+	}
+}

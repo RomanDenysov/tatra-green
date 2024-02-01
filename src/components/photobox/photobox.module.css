@@ -1,0 +1,10 @@
+.img {
+	object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+	.img {
+		width: 100%;
+		height: auto;
+	}
+}

@@ -1,0 +1,22 @@
+.btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 16px 20px;
+	border: 1px solid var(--text-color);
+	background-color: transparent;
+	font-size: 20px;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	font-family: "Jost", sans-serif;
+}
+.btn:hover {
+	background-color: var(--text-color);
+	color: #000 !important;
+}
+@media screen and (max-width: 780px) {
+	.top {
+		max-width: 120px;
+		font-size: 15px;
+	}
+}
