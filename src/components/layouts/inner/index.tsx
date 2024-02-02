@@ -14,11 +14,13 @@ const anim = (variants: any) => {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
 	return (
-		<div className={styles.inner}>
-			<motion.div className={styles.slide} {...anim(slide)} />
-			<motion.div className={styles.page} {...anim(perspective)}>
-				<motion.div {...anim(opacity)}>{children}</motion.div>
-			</motion.div>
-		</div>
+		<>
+			<div className={styles.inner}>
+				<motion.div className={styles.slide} {...anim(slide)}></motion.div>
+				<motion.div className={styles.page} {...anim(perspective)}>
+					<motion.div {...anim(opacity)}>{children}</motion.div>
+				</motion.div>
+			</div>
+		</>
 	);
 }

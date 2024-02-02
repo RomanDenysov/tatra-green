@@ -21,10 +21,10 @@ export const perspective = {
 
 export const slide = {
 	initial: {
-		x: "100%",
+		x: "calc(100% + 100px)",
 	},
 	enter: {
-		x: "100%",
+		x: "calc(100% + 100px)",
 	},
 	exit: {
 		x: 0,

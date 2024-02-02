@@ -18,8 +18,14 @@ export default function Modal({ onClose, children }: Props) {
 
 	useEffect(() => {
 		if (showDialog === "y") {
-			dialogRef.current?.show();
+			document.body.style.overflow = "hidden";
+			document.body.style.position = "fixed";
+
+			dialogRef.current?.showModal();
 		} else {
+			document.body.style.overflow = "unset";
+			document.body.style.position = "";
+
 			dialogRef.current?.close();
 		}
 	}, [showDialog]);
@@ -50,9 +56,7 @@ export default function Modal({ onClose, children }: Props) {
 						/>
 					</button>
 				</div>
-				<div className={styles.bg}>
-					<div className={styles.imgbox}>{children}</div>
-				</div>
+				<div className={styles.imgbox}>{children}</div>
 			</dialog>
 		) : null;
 

@@ -1,52 +1,53 @@
 .modal {
-	position: absolute;
-	top: 0;
-	left: 0;
-
+	max-width: 100svw;
 	width: 100%;
-	height: auto;
-	background-color: rgba(0, 0, 0, 0.2);
+	max-height: 100svh;
+	height: 100%;
+	margin: auto;
+
+	background-color: transparent;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
 	border: none;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	z-index: 10;
+	position: absolute;
+
+	overflow: hidden;
 }
-.bg {
+.modal::-webkit-scrollbar {
+	display: none;
+}
+.modal::backdrop {
+	max-height: 100%;
 	width: 100%;
-	height: auto;
+	height: 100svh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: transparent;
-
-	animation: modalContentFade 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+	background-color: rgba(0, 0, 0, 0.2);
+	backdrop-filter: blur(10px);
+	position: relative;
 }
-.bgout {
-	width: 100%;
-	height: auto;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: transparent;
-
-	animation: scaleDown 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+.modal:-internal-dialog-in-top-layer {
+	position: absolute;
 }
-
 .fixbtn {
 	position: fixed;
-	max-width: 1000px;
-	width: 100%;
-	height: 50px;
 	top: 0;
 	left: 50%;
 	transform: translateX(-50%);
-	z-index: 12;
+	background-color: transparent;
+	max-width: 1000px;
+	width: 100%;
+	height: 50px;
+	z-index: 20;
 }
 .clsbtn {
 	width: 30px;
 	height: 30px;
-
 	position: fixed;
 	top: 20px;
 	right: 20px;
@@ -54,7 +55,6 @@
 	background-color: black;
 	border-radius: 50%;
 	border: none;
-	z-index: 12;
 
 	display: flex;
 	align-items: center;
@@ -62,6 +62,10 @@
 
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;
+	outline: none;
+}
+.clsbtn:focus {
+	outline: none;
 }
 .clsbtn:hover {
 	opacity: 0.8;
@@ -69,11 +73,22 @@
 }
 
 .imgbox {
-	max-width: 1000px;
-	height: auto;
-	z-index: 11;
+	margin-top: 10px;
+	max-width: 100vw;
+	height: 100%;
 	opacity: 0;
+	user-select: none;
+	overflow-y: auto;
+	z-index: 12;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 	animation: scaleUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+
+	scroll-behavior: smooth;
+}
+.imgbox::-webkit-scrollbar {
+	display: none;
 }
 .out {
 	animation: scaleDown 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;

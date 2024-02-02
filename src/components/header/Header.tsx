@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../button/Button";
 import styles from "./header.module.css";
 import Link from "next/link";
@@ -11,6 +11,16 @@ import { menuSlide } from "./anim";
 export default function Header() {
 	const [open, setOpen] = useState(false);
 	const pathname = usePathname();
+
+	useEffect(() => {
+		if (open) {
+			document.body.style.overflow = "hidden";
+			document.body.style.position = "fixed";
+		} else {
+			document.body.style.overflow = "unset";
+			document.body.style.position = "";
+		}
+	}, [open]);
 
 	return (
 		<header
